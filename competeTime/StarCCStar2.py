@@ -30,7 +30,7 @@ for i in range(1,200):
     #     print "Error...."
     #     continue;
     try:
-        x=1/math.log(lanta1/lanta2)*10000/(0.433329775363)
+        x=1/math.log(lanta1/lanta2)*20000/(0.433329775363)
         print '竞争时间',x,'点的个数',i
         T.append(x)
         M.append(i)

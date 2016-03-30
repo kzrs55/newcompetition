@@ -17,7 +17,7 @@ def findmin(arr):
 ce=[] #特征向量中心性
 value=[] #B网络的最大特征值
 
-for i in range(500):
+for i in range(50):
     BA1=nx.read_adjlist("RandomBAData/7.69.adjlist",nodetype=int);
     M1=nx.to_numpy_matrix(BA1);
     value1, vector1 = np.linalg.eig(M1);
@@ -49,7 +49,8 @@ for i in range(500):
     for i in range(200):
         sum2=sum2+eigenvetor[i+200]
     print sum1,sum2
-    C=sum2/(sum1+sum2)
+    # C=sum2/(sum1+sum2)
+    C=sum2+sum1
     value.append(value2.max())
     print "B网络所占特征向量中心性大小",C
     ce.append(C)
@@ -58,7 +59,7 @@ print ce
 plt.xlabel('m')
 plt.ylabel('CA')
 plt.xlim(6.8, 8.8)
-plt.ylim(0, 1)
+# plt.ylim(0, 1)
 ax = plt.gca()
 ax.xaxis.set_minor_locator(MultipleLocator(0.1))
 plt.scatter(value, ce)

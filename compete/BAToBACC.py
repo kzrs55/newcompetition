@@ -49,6 +49,7 @@ for i in range(500):
         sum2=sum2+eigenvetor[i+200]
     print sum1,sum2
     C=sum2/(sum1+sum2)
+    C=sum2+sum1
     value.append(value2.max())
     print "B网络所占特征向量中心性大小",C
     ce.append(C)

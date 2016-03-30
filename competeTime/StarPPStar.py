@@ -28,7 +28,8 @@ for i in range(3,200):
             T.append(1/math.log(lanta1/lanta2)*20000)
             M.append(i)
         except Exception,e:
-            print "ERROR"
+            T.append(10000000)
+            M.append(100)
     else:
         try:
             print i,1/math.log(lanta2/lanta1)*20000

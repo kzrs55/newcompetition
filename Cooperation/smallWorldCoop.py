@@ -1,3 +1,5 @@
+#coding=utf-8
+__author__ = 'zjutK'
 # coding=utf-8
 import copy
 
@@ -175,7 +177,7 @@ if __name__ == '__main__':
             star2 = creat_star(number2)
             coop1=cooperationCC(star1,star2)
             coop2=cooperationPP(star1,star2)
-            compe=competeCC(coop1,coop2)
+            compe=competePP(coop1,coop2)
             compete(compe,number1,number2,number1,number2)
             M.append(i)
         except Exception:

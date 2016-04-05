@@ -1,4 +1,6 @@
 #coding=utf-8
+import numpy as np
+
 __author__ = 'zjutK'
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -72,10 +74,11 @@ plt.xlim(0,500)
 plt.ylim(0, 1)
 ax = plt.gca()
 ax.xaxis.set_minor_locator(MultipleLocator(20))
-plt.scatter(M, C1)
-plt.scatter(M, C2)
-plt.scatter(M, C3)
-plt.scatter(M, C4)
+plt.scatter(M, C1,label="A",color=np.random.rand(1,3))
+plt.scatter(M, C2,label="B",color=np.random.rand(1,3))
+plt.scatter(M, C3,label="C",color=np.random.rand(1,3))
+plt.scatter(M, C4,label="D",color=np.random.rand(1,3))
+plt.legend()
 plt.show()
 # import matplotlib.pyplot as plt
 # pos=nx.spring_layout(Star1) # positions for all nodes

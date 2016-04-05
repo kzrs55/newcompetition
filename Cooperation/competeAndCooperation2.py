@@ -1,4 +1,5 @@
-# coding=utf-8
+#coding=utf-8
+__author__ = 'zjutK'
 import copy
 
 from matplotlib.ticker import MultipleLocator
@@ -132,10 +133,10 @@ def paint2():
     plt.ylim(0, 1)
     ax = plt.gca()
     ax.xaxis.set_minor_locator(MultipleLocator(20))
-    plt.scatter(M, C1,label="A",color=np.random.rand(1,3))
-    plt.scatter(M, C2,label="B",color=np.random.rand(1,3))
-    plt.scatter(M, C3,label="C",color=np.random.rand(1,3))
-    plt.scatter(M, C4,label="D",color=np.random.rand(1,3))
+    plt.scatter(M, C1,label="CC",color="red")
+    plt.scatter(M, C2,label="PP",color="blue")
+    # plt.scatter(M, C3,label="C",color=np.random.rand(1,3))
+    # plt.scatter(M, C4,label="D",color=np.random.rand(1,3))
     plt.legend()
     plt.show()
 
@@ -159,17 +160,18 @@ def compete(network,num1,num2,num3,num4):
     for k in range(num1+num2+num3+1,num1+num2+num3+num4+1):
         sum4=sum4+eigenvetor[k]
     sumall=sum1+sum2+sum3+sum4
-    C1.append(sum1/sumall)
-    C2.append(sum2/sumall)
-    C3.append(sum3/sumall)
-    C4.append(sum4/sumall)
+    C1.append((sum1+sum2)/sumall)
+    C2.append((sum3+sum4)/sumall)
+    # C3.append(sum3/sumall)
+    # C4.append(sum4/sumall)
     print sum1,sum2,sum3,sum4
 
 
 if __name__ == '__main__':
-    for i in range(3,500):
+    for i in range(3,200):
         try:
             number1=i
+            print number1
             number2=100
             star1 = creat_star(number1);
             star2 = creat_star(number2)

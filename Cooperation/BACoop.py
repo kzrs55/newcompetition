@@ -1,3 +1,5 @@
+#coding=utf-8
+__author__ = 'zjutK'
 # coding=utf-8
 import copy
 
@@ -17,7 +19,7 @@ def creat_star(number):
 def findmax(arr):
     max= 0
     index=0
-    for i in range(1,len(arr)+1):
+    for i in range(len(arr)):
         if max < arr[i]:
             max = arr[i];
             index = i;
@@ -27,7 +29,7 @@ def findmax(arr):
 def findmin(arr):
     min=1;
     index=0
-    for i in range(1,len(arr)+1):
+    for i in range(len(arr)):
         if min>arr[i]:
             min=arr[i];
             index=i;
@@ -81,10 +83,10 @@ def competeCC(network1, network2):
         x = findmax(eigenvetor1)
         eigenvetor2 = nx.eigenvector_centrality_numpy(network2);
         y = findmax(eigenvetor2)
+        print "CC竞争连接A网络", x, "B网络", y;
     except Exception:
         print("competeCC error")
     num = network.number_of_nodes()
-    print "CC竞争连接A网络", x, "B网络", y;
     network.add_edge(x, y + num);
     for i, j in network2.edges():
         network.add_edge(i + num, j + num)
@@ -128,7 +130,7 @@ ce=[]
 def paint2():
     plt.xlabel('m')
     plt.ylabel('C')
-    plt.xlim(0,500)
+    plt.xlim(6.8,8.8)
     plt.ylim(0, 1)
     ax = plt.gca()
     ax.xaxis.set_minor_locator(MultipleLocator(20))
@@ -147,16 +149,16 @@ def compete(network,num1,num2,num3,num4):
     except Exception,e:
         print "Error"
     sum1=0;
-    for k in range(1,num1+1):
+    for k in range(0,num1):
         sum1=sum1+eigenvetor[k]
     sum2=0;
-    for k in range(num1+1,num1+num2+1):
+    for k in range(num1,num1+num2):
         sum2=sum2+eigenvetor[k]
     sum3=0;
-    for k in range(num1+num2+1,num1+num2+num3+1):
+    for k in range(num1+num2,num1+num2+num3):
         sum3=sum3+eigenvetor[k]
     sum4=0
-    for k in range(num1+num2+num3+1,num1+num2+num3+num4+1):
+    for k in range(num1+num2+num3,num1+num2+num3+num4):
         sum4=sum4+eigenvetor[k]
     sumall=sum1+sum2+sum3+sum4
     C1.append(sum1/sumall)
@@ -167,19 +169,17 @@ def compete(network,num1,num2,num3,num4):
 
 
 if __name__ == '__main__':
-    for i in range(3,500):
-        try:
-            number1=i
-            number2=100
-            star1 = creat_star(number1);
-            star2 = creat_star(number2)
-            coop1=cooperationCC(star1,star2)
-            coop2=cooperationPP(star1,star2)
-            compe=competeCC(coop1,coop2)
-            compete(compe,number1,number2,number1,number2)
-            M.append(i)
-        except Exception:
-            continue
+    for i in range(1,100):
+        BA1=nx.read_adjlist("RandomBAData/7.69.adjlist",nodetype=int);
+        BA2=nx.random_graphs.barabasi_albert_graph(200,2);
+        M2=nx.to_numpy_matrix(BA2);
+        value2, vector2 = np.linalg.eig(M2);
+        print "A矩阵最大特征值",7.69,"B矩阵最大特征值",value2.max()
+        coop1=cooperationCC(BA1,BA2)
+        coop2=cooperationPP(BA1,BA2)
+        compe=competeCC(coop1,coop2)
+        compete(compe,200,200,200,200)
+        M.append(value2.max())
 
     paint2()
         # paint1(compe)

@@ -1,4 +1,6 @@
 # coding=utf-8
+import networkx as nx
+import numpy as np
 from matplotlib.ticker import MultipleLocator
 
 from cooperation import *
@@ -6,10 +8,12 @@ from cooperation import *
 __author__ = 'zjutK'
 
 
+# coding=utf-8
+
 def paint2(M, C1, C2, C3, C4):
     plt.xlabel('m')
     plt.ylabel('C')
-    plt.xlim(0, 500)
+    plt.xlim(7.0, 8.8)
     plt.ylim(0, 1)
     ax = plt.gca()
     ax.xaxis.set_minor_locator(MultipleLocator(20))
@@ -22,34 +26,33 @@ def paint2(M, C1, C2, C3, C4):
 
 
 if __name__ == '__main__':
-    number2 = 100  # 对比星形网络数量
-    star2 = creat_star(number2)
     M = []
     C1 = []
     C2 = []
     C3 = []
     C4 = []
-    for i in range(3, 500):
+    for i in range(1, 100):
         try:
-            number1 = i
-            star1 = creat_star(number1);
-            coop1 = cooperation_cc(star1, star2)
-            coop2 = cooperation_pp(star1, star2)
-            compe = compete_cc(coop1, coop2)
-            A,B,C,D=compete(compe, number1, number2, number1, number2)
+            BA = nx.read_adjlist("RandomBAData/7.69.adjlist", nodetype=int);
+            ER = nx.random_graphs.barabasi_albert_graph(200, 2)
+            M2 = nx.to_numpy_matrix(ER)
+            value2, vector2 = np.linalg.eig(M2)
+            print "A矩阵最大特征值", 7.69, "B矩阵最大特征值", value2.max()
+            coop1 = cooperation_cc(BA, ER)
+            coop2 = cooperation_pp(BA, ER)
+            compete_network = compete_cc(coop1, coop2)
+            if compete_network is False:
+                print("false")
+                continue
+            A, B, C, D = compete(compete_network, 200, 200, 200, 200)
             C1.append(A)
             C2.append(B)
             C3.append(C)
             C4.append(D)
-            M.append(i)
-            print i
+            print(A,B,C,D)
+            M.append(value2.max())
         except Exception:
-            print 'error'
             continue
-
     paint2(M, C1, C2, C3, C4)
     # paint1(compe)
 
-
-
-    # paint(star1)

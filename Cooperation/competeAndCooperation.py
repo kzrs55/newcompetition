@@ -132,10 +132,10 @@ def paint2():
     plt.ylim(0, 1)
     ax = plt.gca()
     ax.xaxis.set_minor_locator(MultipleLocator(20))
-    plt.scatter(M, C1,label="A",color=np.random.rand(1,3))
-    plt.scatter(M, C2,label="B",color=np.random.rand(1,3))
-    plt.scatter(M, C3,label="C",color=np.random.rand(1,3))
-    plt.scatter(M, C4,label="D",color=np.random.rand(1,3))
+    plt.scatter(M, C1,label="A",color="red")
+    plt.scatter(M, C2,label="B",color="black")
+    plt.scatter(M, C3,label="C",color="blue")
+    plt.scatter(M, C4,label="D",color="green")
     plt.legend()
     plt.show()
 
@@ -167,17 +167,18 @@ def compete(network,num1,num2,num3,num4):
 
 
 if __name__ == '__main__':
+    number2=100
+    star2 = creat_star(number2)
     for i in range(3,500):
         try:
             number1=i
-            number2=100
             star1 = creat_star(number1);
-            star2 = creat_star(number2)
             coop1=cooperationCC(star1,star2)
             coop2=cooperationPP(star1,star2)
             compe=competeCC(coop1,coop2)
             compete(compe,number1,number2,number1,number2)
             M.append(i)
+            print i
         except Exception:
             continue
 

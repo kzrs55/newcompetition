@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cbdaec3a-401d-42f9-811e-457e11038960" name="Default" comment="Merge branch 'master' of https://github.com/kzrs55/newcompetition&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/zjutK.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cooperation/ERCoopBA.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cooperation/cooperation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="cbdaec3a-401d-42f9-811e-457e11038960" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cooperation/BACoop.py" afterPath="$PROJECT_DIR$/Cooperation/BACoop.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cooperation/BACoop2.py" afterPath="$PROJECT_DIR$/Cooperation/BACoop2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cooperation/competeAndCooperation.py" afterPath="$PROJECT_DIR$/Cooperation/competeAndCooperation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cooperation/competeAndCooperation2.py" afterPath="$PROJECT_DIR$/Cooperation/competeAndCooperation2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cooperation/smallWorldCoop.py" afterPath="$PROJECT_DIR$/Cooperation/smallWorldCoop.py" />
     </list>
     <ignored path="newcompetition.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -734,7 +725,13 @@
       <option name="project" value="LOCAL" />
       <updated>1459908733109</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Merge branch 'master' of https://github.com/kzrs55/newcompetition&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.&#10;完善调用方法,调用cooperation中写函数">
+      <created>1459934929227</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1459934929228</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -785,7 +782,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge branch 'master' of https://github.com/kzrs55/newcompetition&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/kzrs55/newcompetition&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.&#10;" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/kzrs55/newcompetition&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.&#10;完善调用方法,调用cooperation中写函数" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/kzrs55/newcompetition&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.&#10;完善调用方法,调用cooperation中写函数" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
